@@ -1,0 +1,45 @@
+.unhyperlinkedNav{
+    color:white;
+    text-align:right;
+    float: right;
+    display: block;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+
+}
+
+.topnav {
+    background-color: #a40000 ;
+    overflow: hidden;
+
+}
+
+.topnav a {
+    float: left;    
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+}
+
+.topnav a:hover{
+    background-color: #FFFFDB;
+    color: #a40000;
+}
+
+/* Add an active class to highlight the current page */
+.topnav .active {
+  background-color: #4CAF50;
+  color: white;
+}
+
+
+h1, h2 {
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    color: #a40000;
+}
