@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News2Change</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="/js/news.js" defer></script>
+</head>
+<body >
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>News2Change</b></a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#news" class="w3-bar-item w3-button">News</a>
+      <a href="#change" class="w3-bar-item w3-button">Vote for Change</a>
+      <a href="#about" class="w3-bar-item w3-button">About</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="./img/main_photo.jpg" alt="Change for Good Poster" width="1500" height="800">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>News2Change</b></span> </h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+  <!-- News Section -->
+  <div class="w3-container w3-padding-32" id="news">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">News</h3>
+  </div>
+
+  <div class="NewsContainer">
+      <!-- News Loads Here -->
+  </div>
+
+  <!-- Change Section -->
+    <div class="w3-container w3-padding-32" id="change">
+      <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Vote for Change</h3>
+    </div>
+
+  <div style="width: 100%; display: flex; justify-content: center; align-items: center;">
+    <button style="padding:20px; " onclick="getLocation()">Find my representatives</button>
+  </div>
+
+  <p id="demo"></p>
+  <script>
+
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+    }
+  }
+
+  function showPosition(position) {
+
+
+    window.open("/reps?lat=" + position.coords.latitude + "&long=" + position.coords.longitude)
+  }
+  </script>
+
+  <!-- About Section -->
+  <div class="w3-container" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
+    <p>News2Change identifies news trends happening near you and across the country in a few clicks. 
+      Local representatives are also shown to make advocacy more accessible. We utilized News API, 
+      Google Civic Information API, Geolocation API, and Javascript to build our app. News2Change uses a geolocation API that asks for the user's permission and successfully outputs the coordinates of the user to give you your local representatives. News2Change has the potential to reach a large range of users.
+
+    </p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
+    <p>Let's get in touch.</p>
+    <form action="/contacted" target="_blank">
+      <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Email" required name="Email">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Subject" required name="Subject">
+      <input class="w3-input w3-section w3-border" type="text" placeholder="Comment" required name="Comment">
+      <button class="w3-button w3-black w3-section" type="submit">
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+      </button>
+    </form>
+  </div>
+
+<!-- End page content -->
+</div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="./" title="News2Change" target="_blank" class="w3-hover-text-green">News2Change</a></p>
+</footer>
+
+</body>
+</html>

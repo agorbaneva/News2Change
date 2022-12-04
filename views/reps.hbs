@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>News2Change</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+
+  <!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="../" class="w3-bar-item w3-button"><b>News2Change</b></a>
+    </div>
+  </div>
+</div>
+
+	<h1 style="margin-top: 70px">{{object.address}}</h1>
+
+	  <div class="w3-row-padding w3-grayscale">
+    {{#each object.representatives}}
+      <div class="w3-col l3 m6 w3-margin-bottom">
+        <img src={{this.photoUrl}} onerror="this.onerror=null;this.src='https://upload.wikimedia.org/wikipedia/commons/4/4b/Seal_of_the_United_States_Congress.svg';" alt="Representative" style="width:100%">
+        <h3>{{this.name}}</h3>
+        <p class="w3-opacity">{{this.position}}</p>
+        <p>{{this.party}}</p>
+        {{#if this.email}}
+          <p><a href="mailto:{{this.email}}" target="_blank"><button class="w3-button w3-light-grey w3-block" action="">Contact via Email</button></a></p>
+        {{/if}}
+        {{#if this.site}}
+        <p><a href="{{this.site}}" target="_blank"><button class="w3-button w3-light-grey w3-block" action="">Visit Site</button></a></p>
+        {{/if}}
+      </div>
+    {{/each}}
+  </div>
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-16">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="News2Change" target="_blank" class="w3-hover-text-green">News2Change</a></p>
+</footer>
+
+</body>
+</html>
